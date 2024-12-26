@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEasy - Electronics</title>
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9fafc;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #2874f0;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo img {
+      width: auto;
+      height: 150px;
+      margin-right: 10px;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    header nav ul li {
+      display: inline;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      si
+    }
+
+    header nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    .search-bar {
+      display: flex;
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 2px 0 0 2px;
+    }
+
+    .search-bar button {
+      background-color: #ff9f00;
+      border: none;
+      padding: 0.5rem 1rem;
+      color: white;
+      border-radius: 0 2px 2px 0;
+      cursor: pointer;
+    }
+
+    /* Layout */
+    .main-content {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      flex: 0 0 250px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      border-right: 1px solid #ddd;
+    }
+
+    .sidebar h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .sidebar label {
+      font-size: 0.9rem;
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    .sidebar input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .product-list {
+      flex: 1;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      padding: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    /* Modify image size */
+    .product img {
+      width: 200px;  /* Set the width */
+      height: 200px;  /* Set the height */
+      object-fit: cover;  /* Ensures image is resized without distortion */
+      margin-bottom: 10px;
+    }
+
+    .product h3 {
+      font-size: 1rem;
+      color: #2874f0;
+    }
+
+    .product p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .product button {
+      background-color: #ff9f00;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="cartify_logo-removebg-preview.png" alt="Logo">
+      <h1>ShopEasy</h1>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products, brands and more">
+      <button>Search</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">My Cart</a></li>
+        <li><a href="#">More</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Filter by Price</h3>
+      <label for="min-price">Min Price:</label>
+      <input type="number" id="min-price" placeholder="₹0">
+      <label for="max-price">Max Price:</label>
+      <input type="number" id="max-price" placeholder="₹10,000">
+      <button>Apply Filter</button>
+    </aside>
+
+    <!-- Product List -->
+    <div class="product-list">
+      <div class="product" data-id="1">
+        <img src="p2.jpeg" alt="Product 1">
+        <h3>Cube Fidget Toys for stress relief toys</h3>
+        <p>₹299</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product" data-id="2">
+        <img src="p3.jpeg" alt="Product 2">
+        <h3>HOS Mini Wireless Keyboard</h3>
+        <p>₹1500</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product" data-id="3">
+        <img src="p1.jpeg" alt="Product 3">
+        <h3>USB-C Power Bank Brands: Mi, Realme</h3>
+        <p>₹1000</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product" data-id="4">
+        <img src="p9.jpeg" alt="Product 4">
+        <h3>mbeat Gorilla Power 10W Qi Certified Wireless Charging Pad</h3>
+        <p>₹5000</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product" data-id="5">
+        <img src="p5.jpeg" alt="Product 5">
+        <h3>Realme Buds Air 3 True Wireless Earbud</h3>
+        <p>₹1500</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product" data-id="6">
+        <img src="p6.jpeg" alt="Product 6">
+        <h3>ZEALOT Portable Bluetooth Speakers</h3>
+        <p>₹6,142</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product" data-id="7">
+        <img src="p7.jpeg" alt="Product 7">
+        <h3>Mi Smart Band 4 (Fitness Tracker)</h3>
+        <p>₹2,499</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product" data-id="8">
+        <img src="p8..jpeg" alt="Product 8">
+        <h3>Logitech M170 Wireless Mouse</h3>
+        <p>₹799</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
